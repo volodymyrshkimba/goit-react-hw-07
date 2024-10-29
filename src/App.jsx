@@ -2,6 +2,8 @@ import ContactForm from "./components/ContactForm/ContactForm.jsx";
 import SearchBox from "./components/SearchBox/SearchBox.jsx";
 import ContactList from "./components/ContactList/ContactList.jsx";
 
+import css from "./App.module.css";
+
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -22,7 +24,7 @@ function App() {
       <h1>Phonebook (by redux + mockapi.io)</h1>
       <ContactForm />
       <SearchBox />
-      {loading && <div>LOADING...</div>}
+      {loading && <div className={css.loader}>LOADING...</div>}
       {!error ? <ContactList /> : <div>ERROR</div>}
     </>
   );
